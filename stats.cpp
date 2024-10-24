@@ -1,6 +1,6 @@
-#include <iostream> // for cout, cin, endl
-#include <cmath>    // for pow -- the only one you're allowed to use from this lib
-#include <iomanip>  // for setprecision, setw -- the only ones you're allowed to use from this lib
+#include <iostream> //for cout, cin, endl
+#include <cmath>    //for pow -- the only one you're allowed to use from this lib
+#include <iomanip>  //for setprecision, setw -- the only ones you're allowed to use from this lib
 using namespace std;
 
 // FUNCTION DECLARATIONS: YOU MUST USE THESE (do not remove):
@@ -12,37 +12,32 @@ double stddev(int* array, int size);
 int main() {
     // Sets the printing of floating-point numbers
     // to show only 2 places after the decimal point
-    cout << fixed << showpoint;
-    cout << setprecision(2);
-
-    int size;
+	cout << fixed << showpoint;
+	cout << setprecision(2);
+	int size;
 	// Input loop for number of grades 
-    do {
-	    cout << "Enter number of grades: ";
-	    cin >> size;
+	do {
+		cout << "Enter number of grades: ";
+		cin >> size;
 	    // Error check: size must be greater than 0
-	    if (size <=0){
-		    cout<< "Error!"<< endl;
-		    exit(1); // Exit program if invalid input 
+		if (size <=0){
+			cout<< "Error!"<< endl;
+			exit(1); // Exit program if invalid input 
 	    }
-
-    }while (size <=0); //Repeat until valid input 
-
-    int* grades = new int[size]; //Dynamically allocate an array for grades 
-
-	
-    cout << "Enter grades (each on a new line:" << endl; //Prompt user for grades input
-    for (int i = 0; i < size; i++) {
-	    cin >> grades[i]; //Read each grade
+	}while (size <=0); //Repeat until valid input 
+	int* grades = new int[size]; //Dynamically allocate an array for grades 
+	cout << "Enter grades (each on a new line:" << endl; //Prompt user for grades input
+	for (int i = 0; i < size; i++) {
+		cin >> grades[i]; //Read each grade
     }
-// Output statistics 	
-    cout << "Here are some statistics:"<<endl;
-    cout << "Average: " << average(grades, size) <<endl;
-    cout <<"Median: " <<median(grades, size) << endl;
-    cout<< "StdDev: " << stddev(grades, size) << endl;
+// Output statistics 
+	cout << "Here are some statistics:"<<endl;
+	cout << "Average: " << average(grades, size) <<endl;
+	cout <<"Median: " <<median(grades, size) << endl;
+	cout<< "StdDev: " << stddev(grades, size) << endl;
 // Deallocate the dynamically allocated array 
-    delete[] grades;
-    return 0; //End of the program 
+	delete[] grades;
+	return 0; //End of the program 
 }
 
 // This is bubbleSort - it is given for you to use.
@@ -65,8 +60,7 @@ double average(int *array, int size) {
 	double sum = 0;
 	for (int i = 0; i < size; i++){
 		sum += array[i]; // Sum of all grades 
-	}
-	return sum / size; //Return average of array 
+	}return sum / size; //Return average of array 
 }
 //Function to calculate the median of an array 
 double median (int* array, int size) {
@@ -91,3 +85,4 @@ double stddev (int* array, int size){
 	// Return the square root of the variance 
 	return pow(sum_squares / (size - 1), 0.5);
 }
+	
