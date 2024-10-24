@@ -7,4 +7,4 @@ stats: stats.cpp
 	g++ stats.cpp -o stats
 
 clean:
-	rm *.o anagrams stats
+	rm -f *.o anagrams stats
