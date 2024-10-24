@@ -20,7 +20,7 @@ int main() {
 		cout << "Enter number of grades: ";
 		cin >> size;
 	    // Error check: size must be greater than 0
-		if (size <=0){
+		if (size <=0.00){
 			cout<< "Error!"<< endl;
 			exit(1); // Exit program if invalid input 
 	    }
