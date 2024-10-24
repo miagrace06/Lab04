@@ -38,9 +38,9 @@ int main()
 {
 	//Get input from user 
 	string text1, text2;
-	cout << "Enter first string: ";
+	cout << "Enter first string:\n ";
 	getline(cin, text1); // Using getline to read entire line including spaces 
-	cout << "Enter second string: ";
+	cout << "Enter second string:\n";
 	getline(cin, text2);
 
 	// Check if strings are anagrams and output result
