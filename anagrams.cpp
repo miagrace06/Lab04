@@ -30,7 +30,6 @@ bool checkAnagram(string word1, string word2){
 			return false;
 		}
 	}
-
 	return true;
 	//If we reach here, all counters were zero, so strings are anagrams 
 }
@@ -45,10 +44,10 @@ int main()
 	getline(cin, text2);
 
 	// Check if strings are anagrams and output result
-	if (checkAnagram(text1, text2))
+	if (checkAnagram(text1, text2)){
 		cout << "The strings are anagrams." << endl;
-	else
+	}else{
 		cout << "The strings are not anagrams." << endl;
-    
-    return 0;
+	}
+	return 0;
 }
