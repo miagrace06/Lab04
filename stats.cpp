@@ -15,14 +15,23 @@ int main() {
     // to show only 2 places after the decimal point
 	cout << fixed << showpoint;
 	cout << setprecision(2);
+	
 	int size;
-	cout << "Enter number of grades:";
-	if (cin >> size){
-	//Check if size is valid(greater than 0)
-		if (size <= 0) {
-			cout<< "Error!\n";
-			return 1;
+	string input; 
+	
+	cout << "Enter number of grades: ";
+	while (true){
+		getline(cin, input);
+		if (input.empty()){
+			cout << "Error!\n";
+			continue;
 	}
+		size = atoi(input.c_str());
+		if (size > 0){
+			break;
+		}else {
+			cout << "Error!\n";
+		}
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
