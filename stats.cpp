@@ -1,3 +1,4 @@
+
 #include <iostream> //for cout, cin, endl
 #include <cmath>    //for pow -- the only one you're allowed to use from this lib
 #include <iomanip>  //for setprecision, setw -- the only ones you're allowed to use from this lib
@@ -19,7 +20,7 @@ int main() {
 	cin >> size; 
 
 	//Check if size is valid(greater than 0)
-	if (size <= 0) {
+	if (size < 0) {
 		cout<< "Error!" << endl;
 		exit(1);
 	}
@@ -84,4 +85,3 @@ double stddev (int* array, int size){
 	// Return the square root of the variance 
 	return pow(sum_squares / (size - 1), 0.5);
 }
-	
