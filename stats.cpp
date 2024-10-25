@@ -21,7 +21,7 @@ int main() {
 
 	//Check if size is valid(greater than 0)
 	if (size <= 0) {
-		cout<< "Error!" << endl;
+		cout<< "Error!\n";
 		return 1;
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
