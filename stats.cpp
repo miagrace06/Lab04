@@ -16,16 +16,16 @@ int main() {
 	cout << fixed << showpoint;
 	cout << setprecision(2);
 	int size;
-	cout << "Enter number of grades: ";
+	cout << "Enter number of grades:";
 	cin >> size; 
 
 	//Check if size is valid(greater than 0)
 	if (size <= 0) {
 		cout<< "Error!" << endl;
-		exit(1);
+		return 1;
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
-	cout << "Enter grades (each on a new line:)" << endl; //Prompt user for grades input
+	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++) {
 		cin >> grades[i]; //Read each grade
 		
