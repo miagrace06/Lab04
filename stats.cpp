@@ -15,20 +15,19 @@ int main() {
 	cout << fixed << showpoint;
 	cout << setprecision(2);
 	int size;
-	// Input loop for number of grades 
-	do {
-		cout << "Enter number of grades: ";
-		cin >> size;
-	    // Error check: size must be greater than 0
-		if (size <=0.00){
-			cout<< "Error!"<< endl;
-			exit(1); // Exit program if invalid input 
-	    }
-	}while (size <=0); //Repeat until valid input 
+	cout << "Enter number of grades: ";
+	cin >> size; 
+
+	//Check if size is valid(greater than 0)
+	if (size <= 0) {
+		cout<< "Error!" << endl;
+		exit(1);
+	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
-	cout << "Enter grades (each on a new line:" << endl; //Prompt user for grades input
+	cout << "Enter grades (each on a new line:)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++) {
 		cin >> grades[i]; //Read each grade
+		
     }
 // Output statistics 
 	cout << "Here are some statistics:"<<endl;
