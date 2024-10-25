@@ -20,7 +20,7 @@ int main() {
 	cin >> size; 
 
 	//Check if size is valid(greater than 0)
-	if (size < 0) {
+	if (size <= 0) {
 		cout<< "Error!" << endl;
 		exit(1);
 	}
