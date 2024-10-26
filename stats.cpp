@@ -22,13 +22,23 @@ int main() {
 		getline(cin, input);
 		
 		if (input.empty()) {
-			exit(1);
+			return 0;
 		}
-		size = stoi(input);
-		if (size <= 0) {
-			cout << "Error!" << endl;
-			exit(1);
+
+		bool isValid = true;
+		for (char c : input) {
+			if (!isdigit(c)) {
+				isValid = false;
+				break;
+			}
 		}
+		if (isValid) {
+			size = stoi(input);
+			if (size <= 0) {
+				cout << "Error!" << endl;
+				return 0;
+		}
+	}
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
