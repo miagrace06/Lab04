@@ -15,11 +15,16 @@ int main() {
 	cout << fixed << showpoint;
 	cout << setprecision(2);
 	int size;
-
+	string input;
+	
 	cout << "Enter the number of grades: ";
-	cin >> size;
+	getline(cin, input);
 
-	if (size <= 0) {
+	if (input.empty()){
+		exit(1);
+	}
+
+	if (size == 0) {
 		cout << "Error!"<<endl;
 		return 1;
 	}
