@@ -45,16 +45,14 @@ int main() {
 	cout << "Enter number of grades: ";
 	while (true){
 		getline(cin, input);
-		if (input.empty()){
-			cout << "Error!\n";
-			continue;
-	}
-		size = atoi(input.c_str());
-		if (size > 0){
-			break;
-		}else {
-			cout << "Error!\n";
+		if (isINteger(input)){ //check if input is a valid integer
+			size = atoi(input.c_str());
+			if (size > 0){
+				break;
+			}
 		}
+		cout << "Error! \n";
+	
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
