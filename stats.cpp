@@ -9,18 +9,30 @@ double average(int *array, int size);
 double median(int* array, int size);
 double stddev(int* array, int size);
 
-
 bool isInteger(const string& input) {
-    if (input.empty() || (!isdigit(input[0] && input[0] != '-'))){
-        return false; //Not a valid integer 
+    // Check if the string is empty
+    if (input.empty()) {
+        return false;
     }
-    for (char c : input) {
-        if (!isdigit(c) && c != '-') {
+
+    // Check for a leading '-' sign for negative numbers
+    int startIndex = 0;
+    if (input[0] == '-') {
+        if (input.length() == 1) { // Just a '-' sign is not valid
             return false;
-		    }
+        }
+        startIndex = 1; // Start checking digits after the '-' sign
     }
-    return true;
-	}
+
+    // Check if all characters from startIndex are digits
+    for (int i = startIndex; i < input.length(); i++) {
+        if (!isdigit(input[i])) {
+            return false; // Found a non-digit character
+        }
+    }
+    
+    return true; // All characters are valid digits
+}
 int main() {
     // Sets the printing of floating-point numbers
     // to show only 2 places after the decimal point
@@ -33,24 +45,28 @@ int main() {
 	cout << "Enter number of grades: ";
 	while (true){
 		getline(cin, input);
-		if (isInteger(input)){
-			size = atoi(input.c_str());
-			if (size > 0){
-				break;
-			}
+		if (input.empty()){
+			cout << "Error!\n";
+			continue;
+	}
+		size = atoi(input.c_str());
+		if (size > 0){
+			break;
+		}else {
+			cout << "Error!\n";
 		}
-		cout << "Error!\n";
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++) {
 		while (true) {
-			getline (cin, input);
-			if (isInteger(input)) {
+			getline(cin, input);
+			if (isInteger(input)){
 				grades[i] = atoi(input.c_str());
 				break;
+			}else{
+				cout << "Error!\n";
 			}
-			cout << "Error!\n";
 		}
 	}
 // Output statistics 
