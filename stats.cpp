@@ -9,63 +9,25 @@ double average(int *array, int size);
 double median(int* array, int size);
 double stddev(int* array, int size);
 
-bool isInteger(const string& input) {
-    // Check if the string is empty
-    if (input.empty()) {
-        return false;
-    }
-
-    // Check for a leading '-' sign for negative numbers
-    int startIndex = 0;
-    if (input[0] == '-') {
-        if (input.length() == 1) { // Just a '-' sign is not valid
-            return false;
-        }
-        startIndex = 1; // Start checking digits after the '-' sign
-    }
-
-    // Check if all characters from startIndex are digits
-    for (int i = startIndex; i < input.length(); i++) {
-        if (!isdigit(input[i])) {
-            return false; // Found a non-digit character
-        }
-    }
-    
-    return true; // All characters are valid digits
-}
 int main() {
     // Sets the printing of floating-point numbers
     // to show only 2 places after the decimal point
 	cout << fixed << showpoint;
 	cout << setprecision(2);
-	
 	int size;
-	string input; 
-	
-	cout << "Enter number of grades: ";
-	while (true){
-		getline(cin, input);
-		if (isInteger(input)){ //check if input is a valid integer
-			size = atoi(input.c_str());
-			if (size > 0){
-				break;
-			}
-		}
-		cout << "Error! \n";
-	
+
+	cout << "Enter the number of grades: ";
+	cin >> size;
+
+	if (size <= 0) {
+		cout << "Error!"<<endl;
+		return 1;
 	}
+	
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
-	for (int i = 0; i < size; i++) {
-		while (true) {
-			getline(cin, input);
-			if (isInteger(input)){
-				grades[i] = atoi(input.c_str());
-				break;
-			}else{
-				cout << "Error!\n";
-			}
-		}
+	for (int i = 0; i < size; i++){
+		cin >> grades[i];
 	}
 // Output statistics 
 	cout << "Here are some statistics:"<<endl;
