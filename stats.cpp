@@ -22,7 +22,7 @@ int main() {
 		getline(cin, input);
 		
 		if (input.empty()) {
-			return 0;
+			continue;
 		}
 
 		bool isValid = true;
