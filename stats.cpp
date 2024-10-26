@@ -14,15 +14,31 @@ int main() {
     // to show only 2 places after the decimal point
 	cout << fixed << showpoint;
 	cout << setprecision(2);
-	int size;
-	
-	cout << "Enter the number of grades: ";
-	cin >> size;
-	if (size == 0) {
-		cout << "Error!"<<endl;
-		return 1;
-	}
-	
+	int size = 0;
+	string input;
+
+	while (true) {
+		cout << "Enter the number of grades: ";
+		getline(cin, input);
+		
+		if (input.empty()) {
+			return 0;
+		}
+		bool isNumber = true;
+		for (char c : input) {
+			if (c < '0' || c > '9') {
+				isNumber = false; 
+				break;
+			}
+		}
+		if (isNumber) { 
+			size = stoi(input);
+			if (size > 0) {
+				break;
+			}
+		}
+		cout << "Error!"<< endl;
+		}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++){
