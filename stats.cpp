@@ -37,8 +37,12 @@ int main() {
 			if (size <= 0) {
 				cout << "Error!" << endl;
 				return 0;
+			}
+			break;
+		} else {
+			cout << "Error!" << endl;
+			return 0;
 		}
-	}
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
