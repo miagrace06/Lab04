@@ -36,7 +36,7 @@ int main() {
 
 			if (size == 0) {
 				cout << "Error!" << endl;
-				return 0;
+				continue;
 			}
 			if (size > 0) {
 				break;
