@@ -22,28 +22,14 @@ int main() {
 		getline(cin, input);
 		
 		if (input.empty()) {
-			return 0;
+			exit(1);
 		}
-		bool isNumber = true;
-		for (char c : input) {
-			if (c < '0' || c > '9') {
-				isNumber = false; 
-				break;
-			}
+		size = stoi(input);
+		if (size <= 0) {
+			cout << "Error!" << endl;
+			exit(1);
 		}
-		if (isNumber) { 
-			size = stoi(input);
-
-			if (size == 0) {
-				cout << "Error!" << endl;
-				continue;
-			}
-			if (size > 0) {
-				break;
-			}
-		}
-		cout << "Error!"<< endl;
-		}
+	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++){
