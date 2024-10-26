@@ -9,6 +9,18 @@ double average(int *array, int size);
 double median(int* array, int size);
 double stddev(int* array, int size);
 
+
+bool isInteger(const string& input) {
+    if (input.empty() || (!isdigit(input[0] && input[0] != '-')){
+        return false; //Not a valid integer 
+    }
+    for (char c : input) {
+        if (!isdigit(c) && c != '-') {
+            return false:
+		    }
+    }
+    return true;
+	}
 int main() {
     // Sets the printing of floating-point numbers
     // to show only 2 places after the decimal point
@@ -21,24 +33,26 @@ int main() {
 	cout << "Enter number of grades: ";
 	while (true){
 		getline(cin, input);
-		if (input.empty()){
-			cout << "Error!\n";
-			continue;
-	}
-		size = atoi(input.c_str());
-		if (size > 0){
-			break;
-		}else {
-			cout << "Error!\n";
+		if (isInteger(input)){
+			size = atoi(input.c_str());
+			if (size > 0){
+				break;
+			}
 		}
+		cout << "Error!\n";
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
 	for (int i = 0; i < size; i++) {
-		getline(cin, input);
-		grades[i] = atoi(gradeInput.c_str());
-		
-    }
+		while (true) {
+			getline (cin, input);
+			if (isInteger(input)) {
+				grades[i] = atoi(input.c_str());
+				break;
+			}
+			cout << "Error!\n";
+		}
+	}
 // Output statistics 
 	cout << "Here are some statistics:"<<endl;
 	cout << "Average: " << average(grades, size) <<endl;
