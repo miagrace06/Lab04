@@ -11,12 +11,12 @@ double stddev(int* array, int size);
 
 
 bool isInteger(const string& input) {
-    if (input.empty() || (!isdigit(input[0] && input[0] != '-')){
+    if (input.empty() || (!isdigit(input[0] && input[0] != '-'))){
         return false; //Not a valid integer 
     }
     for (char c : input) {
         if (!isdigit(c) && c != '-') {
-            return false:
+            return false;
 		    }
     }
     return true;
