@@ -33,6 +33,11 @@ int main() {
 		}
 		if (isNumber) { 
 			size = stoi(input);
+
+			if (size == 0) {
+				cout << "Error!" << endl;
+				return 0;
+			}
 			if (size > 0) {
 				break;
 			}
