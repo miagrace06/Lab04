@@ -45,7 +45,7 @@ int main() {
 	cout << "Enter number of grades: ";
 	while (true){
 		getline(cin, input);
-		if (isINteger(input)){ //check if input is a valid integer
+		if (isInteger(input)){ //check if input is a valid integer
 			size = atoi(input.c_str());
 			if (size > 0){
 				break;
