@@ -35,8 +35,10 @@ int main() {
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
+	string gradeInput;
 	for (int i = 0; i < size; i++) {
-		cin >> grades[i]; //Read each grade
+		getline(cin, gradeInput);
+		grades[i] = atoi(gradeInput.c_str());
 		
     }
 // Output statistics 
