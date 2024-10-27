@@ -17,10 +17,9 @@ int main() {
 	int size = 0;
 	string input;
 	
-	cout << "Enter the number of grades: ";
+	cout << "Enter number of grades: ";
 	getline(cin, input);
 	if (input.empty()) {
-		cout << "Error!" <<endl;
 		return 0;
 		}
 	for (char c : input) {
