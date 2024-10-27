@@ -16,33 +16,23 @@ int main() {
 	cout << setprecision(2);
 	int size = 0;
 	string input;
-
-	while (true) {
-		cout << "Enter the number of grades: ";
-		getline(cin, input);
-		
-		if (input.empty()) {
-			continue;
+	
+	cout << "Enter the number of grades: ";
+	getline(cin, input);
+	if (input.empty()) {
+		cout << "Error!" <<endl;
+		return 0;
 		}
-
-		bool isValid = true;
-		for (char c : input) {
-			if (!isdigit(c)) {
-				isValid = false;
-				break;
-			}
-		}
-		if (isValid) {
-			size = stoi(input);
-			if (size <= 0) {
-				cout << "Error!" << endl;
-				return 0;
-			}
-			break;
-		} else {
-			cout << "Error!" << endl;
+	for (char c : input) {
+		if (!isdigit(c)){
+			cout << "Error!"<<endl;
 			return 0;
 		}
+	}
+	size = stoi(input);
+	if (size <= 0) {
+		cout << "Error!" << endl;
+		return 0;
 	}
 	int* grades = new int[size]; //Dynamically allocate an array for grades 
 	cout << "Enter grades (each on a new line)" << endl; //Prompt user for grades input
