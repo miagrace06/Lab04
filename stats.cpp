@@ -19,9 +19,16 @@ int main() {
 	
 	cout << "Enter number of grades: ";
 	getline(cin, input);
-	if (input.empty()) {
-		return 0;
+	bool is_empty = true;
+	for (char c : input) {
+		if (!isspace(c)) {
+			is_empty = false; 
+			break;
 		}
+	}
+	if (is_empty) {
+		return 0
+			}
 	for (char c : input) {
 		if (!isdigit(c)){
 			cout << "Error!"<<endl;
